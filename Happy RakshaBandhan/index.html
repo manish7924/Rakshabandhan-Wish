@@ -12,16 +12,13 @@
       rel="stylesheet"
     />
     <style>
-      /* Custom styles and animations */
       @keyframes animated-gradient {
         0% {
           background-position: 0% 50%;
         }
-
         50% {
           background-position: 100% 50%;
         }
-
         100% {
           background-position: 0% 50%;
         }
@@ -33,7 +30,6 @@
         background-size: 400% 400%;
         animation: animated-gradient 15s ease infinite;
         overflow: hidden;
-        /* Hide scrollbars during animation */
       }
 
       .font-dancing {
@@ -64,7 +60,6 @@
         transform: rotateY(5deg) rotateX(5deg) scale(1.05);
       }
 
-      /* New Modal Style */
       .message-modal {
         background-color: #fff;
         border: 2px solid #fbcfe8;
@@ -102,10 +97,7 @@
 
   <body class="text-gray-800">
     <!-- Intro Screen -->
-    <div
-      id="intro-screen"
-      class="fixed inset-0 z-[10000] overflow-hidden bg-black"
-    >
+    <div id="intro-screen" class="fixed inset-0 z-[10000] overflow-hidden bg-black">
       <video
         id="rakhi-video"
         class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover z-0 opacity-0 transition-opacity duration-1000"
@@ -121,70 +113,56 @@
       </video>
 
       <audio id="rakhi-audio" autoplay loop>
-        <source
-          src="Audio.mp3"
-          type="audio/mp3"
-        />
+        <source src="Audio.mp3" type="audio/mp3" />
         Your browser does not support the audio element.
-        </audio>
-      <canvas
-        id="background-animation-canvas"
-        class="absolute inset-0 z-10"
-      ></canvas>
-      <div
-        id="dark-overlay"
-        class="absolute inset-0 bg-black bg-opacity-30 z-20 transition-opacity duration-1000"
-      ></div>
+      </audio>
+
+      <canvas id="background-animation-canvas" class="absolute inset-0 z-10"></canvas>
+
+      <div id="dark-overlay" class="absolute inset-0 bg-black bg-opacity-30 z-20 transition-opacity duration-1000"></div>
+
       <div
         id="intro-content-overlay"
-        class="relative z-30 flex flex-col items-center justify-center h-full text-white p-4 transition-opacity duration-500"
+        class="relative z-30 flex flex-col items-center justify-center h-full text-white text-center px-4 py-8 transition-opacity duration-500"
       >
-        <h1
-          class="text-4xl md:text-7xl font-bold font-dancing mb-4 text-shadow"
-        >
-          💫 Happy Raksha Bandhan! 💫
-        </h1>
-        <p
-          class="text-lg md:text-xl mb-8 max-w-lg mx-auto text-center text-shadow-md"
-        >
-          “Rakhi is not just a thread, it’s a bond of love, trust, and protection.”
-        </p>
-        <p
-          class="text-lg md:text-xl mb-8 max-w-lg mx-auto text-center text-shadow-md"
-        >
-          Rakhi ke is pavitra bandhan mein, Chhupi hai bachpan ki kahaniyaan,
-          Ladna-jhagadna, fir man jaana, Aur ek doosre ke liye jaan luta dena.
-          💕 Tere liye duaon ka silsila kabhi na rukhe, Meri dua hai tu hamesha
-          muskurata rahe. 🌸💫
-        </p>
-        <p
-          class="text-lg md:text-xl mb-8 max-w-lg mx-auto text-center text-shadow-md"
-        >
-          On this special day, I wish our bond of love grows stronger with each
-          passing year. 🤗 You’re not just my sibling, but my forever friend, my
-          secret keeper, and my biggest supporter. ❤️ So Let’s celebrate this
-          beautiful bond of love and togetherness! 🎉 May you always be happy,
-          safe, and blessed with everything your heart desires. 🌸✨
-        </p>
+        <div class="max-w-screen-sm">
+          <h1 class="text-4xl md:text-7xl font-bold font-dancing mb-4 mt-12 text-shadow">
+            💫 Happy Raksha Bandhan! 💫
+          </h1>
+          <p class="text-lg md:text-xl mb-8 text-shadow-md">
+            “Rakhi is not just a thread, it’s a bond of love, trust, and protection.”
+          </p>
+          <p class="text-lg md:text-xl mb-8 text-shadow-md">
+            Rakhi ke is pavitra bandhan mein, Chhupi hai bachpan ki kahaniyaan,
+            Ladna-jhagadna, fir man jaana, Aur ek doosre ke liye jaan luta dena.
+            💕 Tere liye duaon ka silsila kabhi na rukhe, Meri dua hai tu hamesha
+            muskurata rahe. 🌸💫
+          </p>
+          <p class="text-lg md:text-xl mb-8 text-shadow-md">
+            On this special day, I wish our bond of love grows stronger with each
+            passing year. 🤗 You’re not just my sibling, but my forever friend, my
+            secret keeper, and my biggest supporter. ❤️ So Let’s celebrate this
+            beautiful bond of love and togetherness! 🎉 May you always be happy,
+            safe, and blessed with everything your heart desires. 🌸✨
+          </p>
 
-        <button
-          id="click-me-btn"
-          class="bg-pink-500 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-pink-600 transition-all duration-300 glow-button"
-        >
-          Click for More !
-        </button>
+          <button
+            id="click-me-btn"
+            class="bg-pink-500 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-pink-600 transition-all duration-300 glow-button"
+          >
+            Click for More !
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Main Content -->
     <main
       id="main-content"
-      class="hidden min-h-screen w-full flex flex-col items-center justify-center p-4 md:p-8"
+      class="hidden min-h-screen w-full flex flex-col items-center justify-center px-4 py-8 md:px-8"
     >
-      <div class="text-center mb-8 md:mb-12">
-        <h1
-          class="text-5xl md:text-7xl font-bold text-white font-playfair text-shadow"
-        >
+      <div class="w-full max-w-screen-md mx-auto text-center mb-8 md:mb-12">
+        <h1 class="text-4xl md:text-7xl font-bold text-white font-playfair text-shadow">
           Happy Raksha Bandhan
         </h1>
         <p class="text-lg md:text-xl text-white mt-2 text-shadow-md">
@@ -192,13 +170,10 @@
         </p>
       </div>
 
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
-      >
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-screen-lg">
+        <!-- Card 1 -->
         <div id="card-1" class="card">
-          <div
-            class="card-inner bg-white rounded-2xl shadow-xl overflow-hidden"
-          >
+          <div class="card-inner bg-white rounded-2xl shadow-xl overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1609234813022-247ac0098198?q=80&w=1974&auto=format&fit=crop"
               onerror="this.onerror=null;this.src='sister brother.png';"
@@ -207,7 +182,7 @@
             />
             <div class="p-6 text-center">
               <button
-                class="reveal-btn bg-pink-500 text-white font-bold py-3 px-6 rounded-full hover:bg-pink-600 transition-all duration-300"
+                class="reveal-btn bg-pink-500 text-white font-bold py-3 px-6 rounded-full hover:bg-pink-600 transition-all duration-300 mx-auto"
                 data-message="To my dearest Sister, You have always been my sister. Thank you for all the l⎊ve and support. Happy Raksha Bandhan! 🎉✨"
               >
                 Reveal Message
@@ -215,10 +190,10 @@
             </div>
           </div>
         </div>
+
+        <!-- Card 2 -->
         <div id="card-2" class="card">
-          <div
-            class="card-inner bg-white rounded-2xl shadow-xl overflow-hidden"
-          >
+          <div class="card-inner bg-white rounded-2xl shadow-xl overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1605826744123-579c86de248f?q=80&w=2070&auto=format&fit=crop"
               onerror="this.onerror=null;this.src='Traditional thali.webp';"
@@ -227,7 +202,7 @@
             />
             <div class="p-6 text-center">
               <button
-                class="reveal-btn bg-purple-500 text-white font-bold py-3 px-6 rounded-full hover:bg-purple-600 transition-all duration-300"
+                class="reveal-btn bg-purple-500 text-white font-bold py-3 px-6 rounded-full hover:bg-purple-600 transition-all duration-300 mx-auto"
                 data-message="May the thread of Rakhi always keep our bond strong and our hearts ⎊ connected, no matter where we are. Wishing you a joyous celebration!"
               >
                 Reveal Message
@@ -235,10 +210,10 @@
             </div>
           </div>
         </div>
+
+        <!-- Card 3 -->
         <div id="card-3" class="card">
-          <div
-            class="card-inner bg-white rounded-2xl shadow-xl overflow-hidden"
-          >
+          <div class="card-inner bg-white rounded-2xl shadow-xl overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1597920164293-17eb4c617c18?q=80&w=1932&auto=format&fit=crop"
               onerror="this.onerror=null;this.src='gift.webp';"
@@ -247,7 +222,7 @@
             />
             <div class="p-6 text-center">
               <button
-                class="reveal-btn bg-orange-400 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-500 transition-all duration-300"
+                class="reveal-btn bg-orange-400 text-white font-bold py-3 px-6 rounded-full hover:bg-orange-500 transition-all duration-300 mx-auto"
                 data-message="You are the most precious gift in my life. On this auspicious day, I wish you all the happiness and success in the world. Happy Rakhi!"
               >
                 Reveal Message
@@ -259,14 +234,8 @@
     </main>
 
     <!-- Message Modal -->
-    <div
-      id="message-modal"
-      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4"
-    >
-      <div
-        class="absolute inset-0 bg-black bg-opacity-60"
-        id="modal-backdrop"
-      ></div>
+    <div id="message-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-black bg-opacity-60" id="modal-backdrop"></div>
       <div
         class="message-modal rounded-2xl w-full max-w-md mx-auto p-8 text-center relative transform scale-95 transition-transform duration-300"
       >
@@ -276,19 +245,8 @@
           id="close-modal-btn"
           class="absolute top-3 right-3 text-gray-700 hover:text-black z-10"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
