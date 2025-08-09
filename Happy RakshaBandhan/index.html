@@ -12,13 +12,16 @@
       rel="stylesheet"
     />
     <style>
+      /* Custom styles and animations */
       @keyframes animated-gradient {
         0% {
           background-position: 0% 50%;
         }
+
         50% {
           background-position: 100% 50%;
         }
+
         100% {
           background-position: 0% 50%;
         }
@@ -29,7 +32,8 @@
         background: linear-gradient(-45deg, #fce7f3, #fbcfe8, #f9a8d4, #f472b6);
         background-size: 400% 400%;
         animation: animated-gradient 15s ease infinite;
-        overflow: hidden;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        margin: 0;
       }
 
       .font-dancing {
@@ -37,7 +41,7 @@
       }
 
       .font-playfair {
-        font-family: "Dancing Script", cursive;
+        font-family: "Playfair Display", serif;
       }
 
       .card {
@@ -60,6 +64,7 @@
         transform: rotateY(5deg) rotateX(5deg) scale(1.05);
       }
 
+      /* New Modal Style */
       .message-modal {
         background-color: #fff;
         border: 2px solid #fbcfe8;
@@ -83,6 +88,10 @@
 
       #intro-screen {
         transition: opacity 1s ease-in-out;
+        position: fixed; /* Make sure it's fixed for intro animation */
+        inset: 0;
+        z-index: 10000;
+        overflow-y: auto; /* Make sure intro content can scroll */
       }
 
       .text-shadow {
@@ -91,6 +100,12 @@
 
       .text-shadow-md {
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Add this to allow scrolling when intro is hidden */
+      .main-content-scrollable {
+        max-height: 100vh;
+        overflow-y: auto;
       }
     </style>
   </head>
